@@ -1,0 +1,2 @@
+# invitadosApp
+Ionic framework - firebase
