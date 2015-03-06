@@ -1,0 +1,23 @@
+<ion-view view-title="Boda Gonzalez-Martinez">
+    <ion-content>
+        <button class="button button-icon" ng-click="newPerson()">
+            <i class="icon ion-compose"></i>
+        </button>
+        <div class="list list-inset">
+            <label class="item item-input item-button-right">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search" ng-model="searchText">
+            </label>
+        </div>
+        <ion-list>
+            <ion-item class="item-button-right" ng-repeat="person in people | filter:searchText" type="item-text-wrap">
+                <!-- href="#/tab/friend/{{friend.id}}"-->
+                <h2>{{person.name}}</h2>
+                <h2 ng-show="person.owner"><b>{{person.owner}}</b></h2>
+                <button class="button button-positive" ng-click="deletePerson(person,type)">
+                    <i class="icon ion-ios7-trash"></i>
+                </button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

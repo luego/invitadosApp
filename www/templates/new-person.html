@@ -1,0 +1,29 @@
+<div class="modal">
+
+    <!-- Modal header bar -->
+    <ion-header-bar class="bar-secondary">
+      <h1 class="title">Agregar</h1>
+      <button class="button button-clear button-positive" ng-click="closeNewPerson()">Cerrar</button>
+    </ion-header-bar>
+
+    <!-- Modal content area -->
+    <ion-content>
+
+      <form ng-submit="createPerson(person,correctlySelected)">
+        <div class="list">
+          <label class="item item-input">
+            <input type="text" placeholder="Nombre" ng-model="person.name">
+          </label>
+          <label ng-show="options.length > 0" class="item item-input">
+            <select ng-model="correctlySelected" ng-options="opt as opt.label for opt in options">
+            </select>
+          </label>
+        </div>
+        <div class="padding">
+          <button type="submit" class="button button-block button-positive">Guardar</button>
+        </div>
+      </form>
+
+    </ion-content>
+
+  </div>
