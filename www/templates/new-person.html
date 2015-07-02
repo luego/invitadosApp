@@ -12,7 +12,10 @@
       <form ng-submit="createPerson(person,correctlySelected)">
         <div class="list">
           <label class="item item-input">
-            <input type="text" placeholder="Nombre" ng-model="person.name">
+            <input type="text" placeholder="Nombre" ng-model="person.name" autofocus>
+          </label>
+            <label class="item item-input">
+            <input type="number" placeholder="Cupo" ng-model="person.cupo">
           </label>
           <label ng-show="options.length > 0" class="item item-input">
             <select ng-model="correctlySelected" ng-options="opt as opt.label for opt in options">

@@ -13,7 +13,8 @@
             <ion-item class="item-button-right" ng-repeat="person in people | filter:searchText" type="item-text-wrap">
                 <!-- href="#/tab/friend/{{friend.id}}"-->
                 <h2>{{person.name}}</h2>
-                <h2 ng-show="person.owner"><b>{{person.owner}}</b></h2>
+                <h3>Cupos (<b>{{person.cupo}}</b>)</h3>
+                <h2 ng-show="person.owner != ''"><b>Pertenece a {{person.owner}}</b></h2>
                 <button class="button button-positive" ng-click="deletePerson(person,type)">
                     <i class="icon ion-ios7-trash"></i>
                 </button>

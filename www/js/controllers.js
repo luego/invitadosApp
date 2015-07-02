@@ -5,7 +5,8 @@ angular.module('starter.controllers', [])
 		$scope.people = People.getShary();
 
 		$scope.person = {
-			name: ''
+			name: '',
+			cupo: ''
 		};
 		$scope.type = 1;
 		$scope.options = [];
@@ -23,11 +24,13 @@ angular.module('starter.controllers', [])
 			$scope.personModal.show();
 		};
 
-		$scope.createPerson = function (person) {
+		$scope.createPerson = function (person, correctlySelected) {
+			person.owner = (correctlySelected ? correctlySelected.value : '');
 			People.createShary(person);
 
 			$scope.personModal.hide();
 			person.name = "";
+			person.cupo = "";
 		};
 
 		$scope.closeNewPerson = function () {
@@ -44,7 +47,8 @@ angular.module('starter.controllers', [])
 
 		$scope.people = People.getLuego();
 		$scope.person = {
-			name: ''
+			name: '',
+			cupo: ''
 		};
 		$scope.type = 2;
 		$scope.options = [];
@@ -61,11 +65,13 @@ angular.module('starter.controllers', [])
 			$scope.personModal.show();
 		};
 
-		$scope.createPerson = function (person) {
+		$scope.createPerson = function (person, correctlySelected) {
+			person.owner = (correctlySelected ? correctlySelected.value : '');
 			People.createLuego(person);
 
 			$scope.personModal.hide();
 			person.name = "";
+			person.cupo = "";
 		};
 
 		$scope.closeNewPerson = function () {
@@ -80,7 +86,8 @@ angular.module('starter.controllers', [])
 
 		$scope.people = People.getParticipacion();
 		$scope.person = {
-			name: ''
+			name: '',
+			cupo: ''
 		};
 		$scope.type = 3;
 
@@ -112,6 +119,7 @@ angular.module('starter.controllers', [])
 
 			$scope.personModal.hide();
 			person.name = "";
+			person.cupo = "";
 		};
 
 		$scope.closeNewPerson = function () {

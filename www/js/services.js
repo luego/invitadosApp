@@ -19,21 +19,11 @@ angular.module('starter.services', [])
 	var luegos = $firebaseArray(ref.child('luego'));
 	var partis = $firebaseArray(ref.child('participacion'));
 
-	return {
-		getParticipacion: getParticipacion,
-		getShary: getShary,
-		getLuego: getLuego,
-		createShary: createShary,
-		createLuego: createLuego,
-		createParticipacion: createParticipacion,
-		deletePersonByType: deletePersonByType
-	};
-
 	function getParticipacion() {
 		return partis;
 	}
 
-	function getShary(ionicLoading) {
+	function getShary() {
 
 		return sharies;
 	}
@@ -63,4 +53,14 @@ angular.module('starter.services', [])
 	function createParticipacion(person) {
 		partis.$add(person);
 	}
+
+	return {
+		getParticipacion: getParticipacion,
+		getShary: getShary,
+		getLuego: getLuego,
+		createShary: createShary,
+		createLuego: createLuego,
+		createParticipacion: createParticipacion,
+		deletePersonByType: deletePersonByType
+	};
 });
